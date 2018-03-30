@@ -27,14 +27,14 @@ class InstallTest extends TestCase
 
     /**
      * @requires extension runkit
-     * @testWith ["runkit_constant_add"]
-     *           ["runkit_constant_remove"]
-     *           ["runkit_function_add"]
-     *           ["runkit_function_remove"]
+     * @runInSeparateProcess
      */
-    public function testRunkitFunctionsAreAvailable($function)
+    public function testRunkitFunctionsAreAvailable()
     {
-        $this->assertTrue(function_exists($function));
+        $this->assertTrue(function_exists('runkit_constant_add'));
+        $this->assertTrue(function_exists('runkit_constant_remove'));
+        $this->assertTrue(function_exists('runkit_function_add'));
+        $this->assertTrue(function_exists('runkit_function_remove'));
     }
 
     /**
