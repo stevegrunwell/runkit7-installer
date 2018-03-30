@@ -20,7 +20,7 @@ class InstallTest extends TestCase
 
         $this->assertEquals(0, $exitCode, 'Expected an exit code of 0:' . $this->quoteShellOutput($output));
         $this->assertTrue(
-            extension_loaded('runkit'),
+            (bool) preg_match('/^runkit\s/m', shell_exec('pecl list')),
             'The Runkit extension should have been loaded.'
         );
     }
