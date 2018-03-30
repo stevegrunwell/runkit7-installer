@@ -26,6 +26,18 @@ class InstallTest extends TestCase
     }
 
     /**
+     * @requires extension runkit
+     * @testWith ["runkit_constant_add"]
+     *           ["runkit_constant_remove"]
+     *           ["runkit_function_add"]
+     *           ["runkit_function_remove"]
+     */
+    public function testRunkitFunctionsAreAvailable($function)
+    {
+        $this->assertTrue(function_exists($function));
+    }
+
+    /**
      * Quote the output of the shell script.
      *
      * @param array $output The output captured by exec().
