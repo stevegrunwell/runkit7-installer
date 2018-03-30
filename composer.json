@@ -2,6 +2,10 @@
     "name": "stevegrunwell/runkit7-installer",
     "description": "Installer for PHP Runkit7",
     "license": "MIT",
+    "keywords": [
+        "runkit",
+        "testing"
+    ],
     "authors": [
         {
             "name": "Steve Grunwell",
@@ -9,6 +13,10 @@
             "homepage": "https://stevegrunwell.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/stevegrunwell/runkit7-installer/issues",
+        "source": "https://github.com/stevegrunwell/runkit7-installer"
+    },
     "require-dev": {
         "php": "^7.0",
         "phpunit/phpunit": ">=6.0"
