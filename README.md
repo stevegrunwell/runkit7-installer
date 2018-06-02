@@ -28,6 +28,8 @@ Then, either in a development environment or as part of your <abbr title="Contin
 $ ./vendor/bin/install-runkit.sh
 ```
 
+> **Note:** If you receive permission issues, you may need to run the command above prefixed with `sudo`.
+
 If you wish to install a specific version of Runkit7, you may pass the version number to the script as an argument:
 
 ```sh
