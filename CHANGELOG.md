@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 * Document that root access might be necessary to run the installer ([#3]).
+* Include [Shellcheck](https://www.shellcheck.net/) as part of the continuous integration process.
 
 ## [1.0.0] - 2018-03-29
 
