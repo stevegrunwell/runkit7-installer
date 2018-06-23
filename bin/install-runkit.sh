@@ -30,5 +30,16 @@ fi
 # Download and install Runkit7.
 echo "\\033[0;33mInstalling Runkit7...\\033[0;m"
 download "https://github.com/runkit7/runkit7/releases/download/${RUNKIT_VERSION}/runkit-${RUNKIT_VERSION}.tgz" "$DOWNLOAD_FILENAME" \
-    && pecl install "$DOWNLOAD_FILENAME" \
+    && sudo pecl install "$DOWNLOAD_FILENAME" \
     && rm "$DOWNLOAD_FILENAME"
+
+# Create runkit.ini files for each version of PHP.
+for DIR in /etc/php/*/mods-available; do
+    if [ ! -f "$DIR/runkit.ini" ]; then
+        echo "extension=runkit.so" | sudo tee "$DIR/runkit.ini" > /dev/null \
+            && echo "Created ${DIR}/runkit.ini"
+    fi
+done
+
+# Enable the Redis PHP module.
+sudo phpenmod runkit && echo "\\033[0;32mRunkit7 has been installed and activated!\\033[0;0m"

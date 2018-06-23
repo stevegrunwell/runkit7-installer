@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+* Attempt to automatically create `runkit.ini` files upon installation ([#1]).
 * Document that root access might be necessary to run the installer ([#3]).
 * Include [Shellcheck](https://www.shellcheck.net/) as part of the continuous integration process.
 
@@ -16,4 +17,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/stevegrunwell/runkit7-installer/compare/master...develop
 [1.0.0]: https://github.com/stevegrunwell/runkit7-installer/releases/tag/v1.0.0
+[#1]: https://github.com/stevegrunwell/runkit7-installer/issues/1
 [#3]: https://github.com/stevegrunwell/runkit7-installer/issues/3
