@@ -16,12 +16,18 @@ class InstallTest extends TestCase
             'Expected the Runkit extension to not yet be loaded.'
         );
 
+        $version = PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;
+
         exec(dirname(__DIR__) . '/bin/install-runkit.sh', $output, $exitCode);
 
         $this->assertEquals(0, $exitCode, 'Expected an exit code of 0:' . $this->quoteShellOutput($output));
         $this->assertTrue(
             (bool) preg_match('/^runkit\s/m', shell_exec('pecl list')),
             'The Runkit extension should have been loaded.'
+        );
+        $this->assertTrue(
+            file_exists('/etc/php/' . $version . '/mods-available/runkit.ini'),
+            'Expected a runkit.ini file to be created for PHP ' . $version . '.'
         );
     }
 
