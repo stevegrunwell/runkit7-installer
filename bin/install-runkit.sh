@@ -30,7 +30,7 @@ fi
 # Download and install Runkit7.
 echo "\\033[0;33mInstalling Runkit7...\\033[0;m"
 download "https://github.com/runkit7/runkit7/releases/download/${RUNKIT_VERSION}/runkit-${RUNKIT_VERSION}.tgz" "$DOWNLOAD_FILENAME" \
-    && sudo pecl install "$DOWNLOAD_FILENAME" \
+    && pecl install "$DOWNLOAD_FILENAME" \
     && rm "$DOWNLOAD_FILENAME"
 
 # Create runkit.ini files for each version of PHP.
