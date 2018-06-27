@@ -42,5 +42,7 @@ for DIR in $MODS; do
     fi
 done
 
-# Enable the Redis PHP module.
-sudo phpenmod runkit && echo "\\033[0;32mRunkit7 has been installed and activated!\\033[0;0m"
+# Attempt to enable the Runkit PHP module.
+if [ ! "$(command -v phpenmod)" ]; then
+    sudo phpenmod runkit && echo "\\033[0;32mRunkit7 has been installed and activated!\\033[0;0m"
+fi
