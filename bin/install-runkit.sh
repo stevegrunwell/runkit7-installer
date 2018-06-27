@@ -34,7 +34,8 @@ download "https://github.com/runkit7/runkit7/releases/download/${RUNKIT_VERSION}
     && rm "$DOWNLOAD_FILENAME"
 
 # Create runkit.ini files for each version of PHP.
-for DIR in /etc/php/*/mods-available; do
+MODS=$(find /etc/php/ -name "*/mods-available" -type d)
+for DIR in $MODS; do
     if [ ! -f "$DIR/runkit.ini" ]; then
         echo "extension=runkit.so" | sudo tee "$DIR/runkit.ini" > /dev/null \
             && echo "Created ${DIR}/runkit.ini"
