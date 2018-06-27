@@ -32,3 +32,17 @@ echo "\\033[0;33mInstalling Runkit7...\\033[0;m"
 download "https://github.com/runkit7/runkit7/releases/download/${RUNKIT_VERSION}/runkit-${RUNKIT_VERSION}.tgz" "$DOWNLOAD_FILENAME" \
     && pecl install "$DOWNLOAD_FILENAME" \
     && rm "$DOWNLOAD_FILENAME"
+
+# Create runkit.ini files for each version of PHP.
+MODS=$(find /etc/php/ -name "mods-available" -type d)
+for DIR in $MODS; do
+    if [ ! -f "$DIR/runkit.ini" ]; then
+        echo "extension=runkit.so" | sudo tee "$DIR/runkit.ini" > /dev/null \
+            && echo "Created ${DIR}/runkit.ini"
+    fi
+done
+
+# Attempt to enable the Runkit PHP module.
+if [ "$(command -v phpenmod)" ]; then
+    sudo phpenmod runkit && echo "\\033[0;32mRunkit7 has been installed and activated!\\033[0;0m"
+fi
