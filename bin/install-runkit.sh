@@ -43,6 +43,6 @@ for DIR in $MODS; do
 done
 
 # Attempt to enable the Runkit PHP module.
-if [ ! "$(command -v phpenmod)" ]; then
+if [ "$(command -v phpenmod)" ]; then
     sudo phpenmod runkit && echo "\\033[0;32mRunkit7 has been installed and activated!\\033[0;0m"
 fi
