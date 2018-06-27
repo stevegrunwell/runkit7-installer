@@ -13,6 +13,9 @@ php:
 install:
   - composer install --prefer-dist
 
+before_script:
+  - sudo mkdir -p "/etc/php/${TRAVIS_PHP_VERSION}/mods-available"
+
 script:
   - ./vendor/bin/phpunit
   - shellcheck bin/*.sh
