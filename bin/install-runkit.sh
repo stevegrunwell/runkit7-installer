@@ -3,7 +3,7 @@
 # Automate the installation of Runkit7 in development and testing environments.
 
 # Enable users to set an explicit version.
-[ "$1" ] && RUNKIT_VERSION=$1 || RUNKIT_VERSION="1.0.5b1"
+[ "$1" ] && RUNKIT_VERSION=$1 || RUNKIT_VERSION="1.0.9"
 
 DOWNLOAD_FILENAME="runkit-${RUNKIT_VERSION}.tgz"
 
