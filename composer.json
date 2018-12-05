@@ -18,7 +18,7 @@
         "source": "https://github.com/stevegrunwell/runkit7-installer"
     },
     "require-dev": {
-        "php": "^7.0",
+        "php": "^7.1",
         "phpunit/phpunit": ">=6.0"
     },
     "bin": [
