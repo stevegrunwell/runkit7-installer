@@ -1,24 +1,17 @@
-sudo: true
-dist: trusty
 language: php
 
-notifications:
-  email: never
-
 php:
-  - nightly
+  - 7.4snapshot
   - 7.3
   - 7.2
-  - 7.1
-  - 7.0
 
 matrix:
   fast_finish: true
   allow_failures:
-    - php: nightly
+    - php: 7.4snapshot
 
 install:
-  - composer install --prefer-dist
+  - composer install --prefer-dist --no-interactive
 
 before_script:
   - sudo mkdir -p "/etc/php/${TRAVIS_PHP_VERSION}/mods-available"
