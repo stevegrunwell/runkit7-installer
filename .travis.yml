@@ -11,7 +11,7 @@ matrix:
     - php: 7.4snapshot
 
 install:
-  - composer install --prefer-dist --no-interactive
+  - composer install --prefer-dist --no-interaction
 
 before_script:
   - sudo mkdir -p "/etc/php/${TRAVIS_PHP_VERSION}/mods-available"
